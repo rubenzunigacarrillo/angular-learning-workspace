@@ -1,0 +1,29 @@
+header {
+  background-color: color-mix(in srgb, var(--a-bg-color), black 25%);
+  padding: 1rem 2rem;
+  color: var(--a-bg-color-light);
+}
+
+header h1 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+nav a {
+  /* class="bg-amber-300 w-[100px] py-2 text-center hover:scale-105 active:bg-amber-500" */
+  width: 100px;
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--a-bg-color-light);
+  transition: all 200ms ease-out;
+  color: var(--a-bg-color);
+}
+nav a.active {
+  background-color: var(--a-bg-color);
+  color: var(--a-bg-color-light);
+}
+
+
+main {
+  padding: 1rem 2rem;
+}

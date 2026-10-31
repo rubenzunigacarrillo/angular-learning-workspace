@@ -1,0 +1,32 @@
+<h2 class="font-bold text-2xl">Carta</h2>
+<p>Recomendación del cheff: Pizza {{ pizzas()[0].name }}</p>
+
+<section class="mt-2">
+  <h3 class="font-bold text-l">Filtros</h3>
+   <div class="flex flex-row gap-1">
+     @for (type of types; track $index) {
+       <a class="customButton"
+          routerLink="/carta"
+          routerLinkActive="active"
+          [queryParams]="{ type: type !== allTypes ? type : '' }"
+        >
+         {{type}}
+       </a>
+     }
+   </div>
+</section>
+<section class="grid gap-2 grid-cols-4 bg-amber-100 p-2 mt-2 transition-all duration-200 ease-in-out">
+  @for (pizza of pizzas(); track $index) {
+    <div class="flex flex-col bg-white h-fit">
+      <div class="w-full flex justify-center m-1 ra">
+        <img class="w-32 h-32 object-cover" src="{{ pizza?.imageURL }}" alt="An image of a {{ pizza.name }} pizza">
+      </div>
+      <div class="w-full p-1 flex flex-col justify-end">
+        <a [routerLink]="['/carta', pizza.id]">
+          <p class="font-semibold">{{ pizza.name }}</p>
+        </a>
+        <p class="font-mono" style="letter-spacing: -2px;">{{ pizza.price }} €</p>
+      </div>
+    </div>
+  }
+</section>
