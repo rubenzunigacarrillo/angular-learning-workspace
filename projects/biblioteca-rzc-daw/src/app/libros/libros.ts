@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { BookService, Book, BookFilters } from '../core/services/book-service';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-libros',
-  styles: ``,
-  template: ` <p>libros works!</p> `,
+  styleUrl: './libros.css',
+  templateUrl: './libros.html',
 })
-export class Libros {}
+export class Libros {
+  bookService = inject(BookService);
+  filters: BookFilters = {};
+  books = computed(() => this.bookService.getAllBooks());
+}
