@@ -52,6 +52,8 @@ export class BookService {
       synopsis:
         'The adventures of a noble man who loses his mind from reading too many chivalric romances and decides to become a knight-errant.',
       rating: { value: 4.8, opinions: 359 },
+      publisher: 'Penguin Classics',
+      languaje: 'Castellano',
     },
     {
       id: '978-0451524935',
@@ -65,10 +67,12 @@ export class BookService {
       synopsis:
         'A chilling novel about a dystopian future where a totalitarian regime exerts total control over public and private life.',
       rating: { value: 4.7, opinions: 103 },
+      publisher: 'Signet Classics',
+      languaje: 'Inglés',
     },
     {
       id: '978-0345339683',
-      title: 'The Hobbit',
+      title: 'El Hobbit',
       author: 'J.R.R. Tolkien',
       genre: 'Fantasy',
       coverUrl: 'https://covers.openlibrary.org/b/id/15146094-L.jpg',
@@ -78,6 +82,8 @@ export class BookService {
       synopsis:
         'The journey of Bilbo Baggins, a home-loving hobbit, who sets out on a quest to reclaim a stolen treasure guarded by a dragon.',
       rating: { value: 4.9, opinions: 957 },
+      publisher: 'Minotauro',
+      languaje: 'Castellano',
     },
     {
       id: '978-8408061052',
@@ -91,6 +97,8 @@ export class BookService {
       synopsis:
         "An antiquarian book dealer's son finds a mysterious book that opens the door to a dark and thrilling secret in Barcelona.",
       rating: { value: 4.4, opinions: 205 },
+      publisher: 'Planeta',
+      languaje: 'Castellano',
     },
     {
       id: '978-0060883287',
@@ -104,6 +112,8 @@ export class BookService {
       synopsis:
         'The multi-generational story of the Buendía family, whose patriarch founds the isolated but magical town of Macondo.',
       rating: { value: 4.2, opinions: 68 },
+      publisher: 'Harper Perennial',
+      languaje: 'Inglés',
     },
   ];
 

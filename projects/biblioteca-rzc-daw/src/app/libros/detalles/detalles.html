@@ -53,13 +53,13 @@
         @if (book()?.languaje) {
           <div class="spec-card">
             <span class="spec-title">Idioma</span>
-            <span class="spec-data">Castellano</span>
+            <span class="spec-data">{{book()?.languaje}}</span>
           </div>
         }
         @if (book()?.publisher) {
           <div class="spec-card">
             <span class="spec-title">Editorial</span>
-            <span class="spec-data">Plaza & Janés</span>
+            <span class="spec-data">{{book()?.publisher}}</span>
           </div>
         }
       </section>
