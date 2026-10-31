@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: antiquewhite;
+}
+
+.s-content{
+  padding: 10px;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav a {
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.mipie{
+  border-top: 2px solid burlywood;
+  padding: 20px 10px;
+}

@@ -1,0 +1,23 @@
+<header>
+  <h1>Biblioteca de Rubén Zúñiga Carrillo</h1>
+  <nav>
+    <a routerLink="inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+    <a routerLink="libros" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Libros</a>
+    <a routerLink="autores" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Autores</a>
+    <a routerLink="comprar" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Comprar</a>
+  </nav>
+</header>
+
+<section class="s-content">
+  <router-outlet />
+</section>
+
+
+<footer class="mipie">
+  <p>
+    MisLibrosDaw®
+    <small>
+      ~ Rubén Zúñiga Carrillo
+    </small>
+  </p>
+</footer>
