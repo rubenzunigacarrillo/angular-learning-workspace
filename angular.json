@@ -6,5 +6,127 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+    "biblioteca-rzc-daw": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/biblioteca-rzc-daw",
+      "sourceRoot": "projects/biblioteca-rzc-daw/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/biblioteca-rzc-daw/src/main.ts",
+            "tsConfig": "projects/biblioteca-rzc-daw/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/biblioteca-rzc-daw/public"
+              }
+            ],
+            "styles": ["projects/biblioteca-rzc-daw/src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "biblioteca-rzc-daw:build:production"
+            },
+            "development": {
+              "buildTarget": "biblioteca-rzc-daw:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "pizzeria-rzc-daw": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/pizzeria-rzc-daw",
+      "sourceRoot": "projects/pizzeria-rzc-daw/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/pizzeria-rzc-daw/src/main.ts",
+            "tsConfig": "projects/pizzeria-rzc-daw/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/pizzeria-rzc-daw/public"
+              }
+            ],
+            "styles": ["projects/pizzeria-rzc-daw/src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "pizzeria-rzc-daw:build:production"
+            },
+            "development": {
+              "buildTarget": "pizzeria-rzc-daw:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    }
   }
 }
