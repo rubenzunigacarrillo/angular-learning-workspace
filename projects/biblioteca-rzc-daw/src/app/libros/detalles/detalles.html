@@ -1,0 +1,78 @@
+<main class="book-page">
+  <!-- Navegación superior compacta -->
+  <nav class="book-nav">
+    <a routerLink="/libros" class="back-link">
+      <svg xmlns="http://w3.org" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Volver al catálogo
+    </a>
+  </nav>
+
+  <div class="book-layout">
+    <!-- Columna Izquierda: Imagen y Acciones masivas -->
+    <aside class="book-sidebar">
+      <div class="image-container">
+        <img src="{{book()?.coverUrl}}" alt="Portada del libro: El nombre del viento" class="book-img">
+      </div>
+      <div class="action-stack">
+        <button class="action-btn action-btn-main">Anterior</button>
+        <button class="action-btn action-btn-main">Siguiente</button>
+      </div>
+    </aside>
+
+    <!-- Columna Derecha: Contenido principal e Información -->
+    <section class="book-content">
+      <header class="book-header">
+        <span class="category-tag">{{book()?.genre}}</span>
+        <h1 class="book-headline">{{book()?.title}}</h1>
+        <p class="book-subline">Escrito por <span class="author-name">{{book()?.author}}</span></p>
+
+        @if (book()?.rating) {
+          <div class="rating-badge">
+            <span class="stars-icon" aria-hidden="true">{{ bookService.getRatingStars(book()?.rating?.value ?? 0) }}</span>
+            <span class="rating-text"><strong>{{book()?.rating?.value}}</strong> ({{book()?.rating?.opinions}} opiniones)</span>
+          </div>
+        }
+        @else {
+          <div class="rating-badge">
+            <span class="stars-icon" aria-hidden="true">☆☆☆☆☆</span>
+            <span class="rating-text"><strong>-</strong> (0 opiniones)</span>
+          </div>
+        }
+      </header>
+
+      <!-- Tabla de Especificaciones Técnicas -->
+      <section class="specs-grid">
+        <div class="spec-card">
+          <span class="spec-title">Publicación</span>
+          <span class="spec-data"><time datetime>{{book()?.publicationYear}}</time></span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-title">Páginas</span>
+          <span class="spec-data">{{book()?.pages}} págs.</span>
+        </div>
+        @if (book()?.languaje) {
+          <div class="spec-card">
+            <span class="spec-title">Idioma</span>
+            <span class="spec-data">Castellano</span>
+          </div>
+        }
+        @if (book()?.publisher) {
+          <div class="spec-card">
+            <span class="spec-title">Editorial</span>
+            <span class="spec-data">Plaza & Janés</span>
+          </div>
+        }
+      </section>
+
+      <!-- Resumen / Sinopsis -->
+       @if (book()?.synopsis) {
+         <article class="book-text">
+           <h2 class="section-title">Sinopsis oficial</h2>
+           <p>
+             {{book()?.synopsis}}
+           </p>
+         </article>
+       }
+    </section>
+  </div>
+</main>

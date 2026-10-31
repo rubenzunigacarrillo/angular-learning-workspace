@@ -1,0 +1,225 @@
+/* Paleta de colores planos */
+:root {
+  --canvas-bg: #ffffff;
+  /* Fondo base limpio */
+  --surface-bg: #f8fafc;
+  /* Fondo de tarjetas secundarias */
+  --border-flat: #e2e8f0;
+  /* Bordes sólidos definidos */
+  --text-dark: #0f172a;
+  /* Títulos principales */
+  --text-body: #334155;
+  /* Párrafos de lectura */
+  --text-muted: #64748b;
+  /* Textos secundarios */
+  --primary-accent: #0284c7;
+  /* Azul corporativo */
+  --primary-hover: #0369a1;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+}
+
+/* Contenedor general de la página */
+.book-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background-color: var(--canvas-bg);
+  color: var(--text-body);
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+/* Enlace Volver */
+.book-nav {
+  margin-bottom: 24px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover {
+  color: var(--primary-accent);
+}
+
+/* Layout en dos columnas sin paneles envolventes */
+.book-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .book-layout {
+    grid-template-columns: 300px 1fr;
+    /* Columna fija y columna flexible */
+  }
+}
+
+/* --- COLUMNA LATERAL (Sidebar) --- */
+.book-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-container {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background-color: var(--surface-bg);
+  border: 1px solid var(--border-flat);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.book-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action-stack {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.action-btn-main {
+  background-color: var(--primary-accent);
+  color: var(--text-dark);
+  border: 1px solid var(--border-flat);
+}
+
+.action-btn-main:hover {
+  background-color: var(--primary-hover);
+}
+
+/* --- COLUMNA PRINCIPAL --- */
+.book-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Encabezado */
+.category-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-accent);
+}
+
+.book-headline {
+  font-size: 2.25rem;
+  color: var(--text-dark);
+  margin: 4px 0 8px 0;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.book-subline {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.author-name {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+}
+
+.stars-icon {
+  color: #eab308;
+}
+
+.rating-text {
+  color: var(--text-muted);
+}
+
+.rating-text strong {
+  color: var(--text-dark);
+}
+
+/* Ficha Técnica Plana */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 480px) {
+  .specs-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.spec-card {
+  background-color: var(--surface-bg);
+  border: 1px solid var(--border-flat);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.spec-data {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Cuerpo de texto */
+.section-title {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.book-text p {
+  color: var(--text-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 16px 0;
+}
+
+.book-text p:last-child {
+  margin-bottom: 0;
+}
