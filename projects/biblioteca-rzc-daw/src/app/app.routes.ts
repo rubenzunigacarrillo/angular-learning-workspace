@@ -4,6 +4,7 @@ import { Autores } from './autores/autores';
 import { Inicio } from './inicio/inicio';
 import { Libros } from './libros/libros';
 import { NoEncontrado } from './no-encontrado/no-encontrado';
+import { Detalles } from './libros/detalles/detalles';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,10 @@ export const routes: Routes = [
   {
     path:'libros'
     , component: Libros
+  },
+  {
+    path:'libros/:id'
+    , component: Detalles
   },
   {
     path:'autores'
