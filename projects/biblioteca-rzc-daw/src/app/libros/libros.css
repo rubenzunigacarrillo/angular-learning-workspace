@@ -1,6 +1,6 @@
 .bookshelf{
   display: grid;
-  gap: 20px 0px;
+  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center; /* place-items: center; */
   padding: 30px 20px;
