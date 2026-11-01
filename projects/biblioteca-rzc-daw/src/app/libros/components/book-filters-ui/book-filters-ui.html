@@ -4,61 +4,71 @@
       <p class="filters-eyebrow">Catálogo</p>
       <h2 id="filters-title">Encuentra tu próxima lectura</h2>
     </div>
-    <span class="filters-mark" aria-hidden="true">⌕</span>
+    <button class="apply-filters" type="submit" form="book-filters-form">
+      Aplicar filtros
+    </button>
   </header>
 
-  <form class="filter-grid" aria-labelledby="filters-title">
+  <form id="book-filters-form" class="filter-grid" [formGroup]="filterForm" (ngSubmit)="applyFilters()" aria-labelledby="filters-title">
     <label class="filter-field">
       <span>Género</span>
-      <input type="text" name="genre" placeholder="Ej. fantasía" autocomplete="off">
+      <input type="text" name="genre" formControlName="genre" placeholder="Ej. fantasía" autocomplete="off">
     </label>
 
     <label class="filter-field">
       <span>Autor</span>
-      <input type="text" name="author" placeholder="Nombre del autor" autocomplete="off">
+      <input type="text" name="author" formControlName="author" placeholder="Nombre del autor" autocomplete="off">
     </label>
 
     <fieldset class="filter-field filter-field--range">
       <legend>Año de publicación</legend>
       <div class="filter-control-row">
         <label class="visually-hidden" for="publication-year-order">Comparación del año</label>
-        <select id="publication-year-order" name="publicationYearOrder">
+        <select id="publication-year-order" name="publicationYearOrder" formControlName="publicationYearOrder">
           <option value="greater">Mayor que</option>
           <option value="equal">Igual a</option>
           <option value="lower">Menor que</option>
         </select>
         <label class="visually-hidden" for="publication-year">Año</label>
-        <input id="publication-year" type="number" name="publicationYear" min="0" step="1" placeholder="2020">
+        <input id="publication-year" type="number" name="publicationYear" formControlName="publicationYear" min="0" step="1" placeholder="2020" [attr.aria-invalid]="filterForm.controls.publicationYear.touched && filterForm.controls.publicationYear.invalid" [attr.aria-describedby]="filterForm.controls.publicationYear.touched && filterForm.controls.publicationYear.invalid ? 'publication-year-error' : null">
       </div>
+      @if (filterForm.controls.publicationYear.touched && filterForm.controls.publicationYear.invalid) {
+        <small class="filter-error" id="publication-year-error">{{ filterForm.controls.publicationYear.hasError('pattern') ? 'Introduce un año entero.' : 'El año debe ser 0 o superior.' }}</small>
+      }
     </fieldset>
 
     <fieldset class="filter-field filter-field--range">
       <legend>Número de páginas</legend>
       <div class="filter-control-row">
         <label class="visually-hidden" for="pages-order">Comparación de páginas</label>
-        <select id="pages-order" name="pagesOrder">
+        <select id="pages-order" name="pagesOrder" formControlName="pagesOrder">
           <option value="greater">Mayor que</option>
           <option value="equal">Igual a</option>
           <option value="lower">Menor que</option>
         </select>
         <label class="visually-hidden" for="pages">Páginas</label>
-        <input id="pages" type="number" name="pages" min="1" step="1" placeholder="300">
+        <input id="pages" type="number" name="pages" formControlName="pages" min="1" step="1" placeholder="300" [attr.aria-invalid]="filterForm.controls.pages.touched && filterForm.controls.pages.invalid" [attr.aria-describedby]="filterForm.controls.pages.touched && filterForm.controls.pages.invalid ? 'pages-error' : null">
       </div>
+      @if (filterForm.controls.pages.touched && filterForm.controls.pages.invalid) {
+        <small class="filter-error" id="pages-error">{{ filterForm.controls.pages.hasError('pattern') ? 'Introduce un número entero de páginas.' : 'Las páginas deben ser al menos 1.' }}</small>
+      }
     </fieldset>
 
     <fieldset class="filter-field filter-field--range">
       <legend>Valoración</legend>
       <div class="filter-control-row">
         <label class="visually-hidden" for="rating-order">Comparación de valoración</label>
-        <select id="rating-order" name="ratingOrder">
+        <select id="rating-order" name="ratingOrder" formControlName="ratingOrder">
           <option value="greater">Mayor que</option>
           <option value="equal">Igual a</option>
           <option value="lower">Menor que</option>
         </select>
         <label class="visually-hidden" for="rating">Valoración</label>
-        <input id="rating" type="number" name="rating" min="0" max="5" step="0.1" placeholder="4.0">
+        <input id="rating" type="number" name="rating" formControlName="rating" min="0" max="5" step="0.1" placeholder="4.0" [attr.aria-invalid]="filterForm.controls.rating.touched && filterForm.controls.rating.invalid" [attr.aria-describedby]="filterForm.controls.rating.touched && filterForm.controls.rating.invalid ? 'rating-error' : null">
       </div>
+      @if (filterForm.controls.rating.touched && filterForm.controls.rating.invalid) {
+        <small class="filter-error" id="rating-error">La valoración debe estar entre 0 y 5.</small>
+      }
     </fieldset>
   </form>
 </section>
- 

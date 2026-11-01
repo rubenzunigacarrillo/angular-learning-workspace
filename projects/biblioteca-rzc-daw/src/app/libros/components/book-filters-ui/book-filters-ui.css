@@ -41,17 +41,25 @@
   line-height: 1.2;
 }
 
-.filters-mark {
-  display: grid;
-  flex: 0 0 42px;
-  width: 42px;
-  aspect-ratio: 1;
-  place-items: center;
-  color: var(--filter-accent);
-  border: 1px solid #ead8cb;
-  border-radius: 50%;
-  font-size: 1.8rem;
-  line-height: 1;
+.apply-filters {
+  min-height: 42px;
+  padding: 0 16px;
+  color: #fff;
+  background: #8c4a34;
+  border: 0;
+  border-radius: 5px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.apply-filters:hover {
+  background: #713a29;
+}
+
+.apply-filters:focus-visible {
+  outline: 3px solid rgba(140, 74, 52, 0.25);
+  outline-offset: 2px;
 }
 
 .filter-grid {
@@ -121,6 +129,12 @@
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(72px, 0.8fr);
   gap: 8px;
+}
+
+.filter-error {
+  color: #b42318;
+  font-size: 0.75rem;
+  line-height: 1.35;
 }
 
 .visually-hidden {
