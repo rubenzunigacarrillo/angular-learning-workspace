@@ -1,4 +1,4 @@
-<app-book-filters-ui></app-book-filters-ui>
+<app-book-filters-ui [filters]="filters()" (filtersApplied)="applyFilters($event)"></app-book-filters-ui>
 
 <section class="bookshelf">
   @for (book of books(); track $index) {

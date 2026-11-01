@@ -1,4 +1,4 @@
-import { IBookFilters } from "./ibook-filters";
+import { IBookFilters } from './ibook-filters';
 
 export type OrderType = 'greater' | 'equal' | 'lower';
 
@@ -6,10 +6,8 @@ export class BookFilters implements IBookFilters {
   genre?: string;
   author?: string;
   publicationYear?: { year: number; order: OrderType; };
-  pages?: { value: number; order: OrderType; } | undefined;
-  rating?: { rate: number; order: OrderType; } | undefined;
-
-  constructor(){}
+  pages?: { value: number; order: OrderType; };
+  rating?: { rate: number; order: OrderType; };
 
   setGenre(genre: string){
     this.genre = genre;
