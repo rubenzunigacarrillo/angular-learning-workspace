@@ -1,3 +1,10 @@
+.s-content
+, .mipie > * {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 header {
   --blur-amount: 8px;
 
@@ -26,11 +33,6 @@ header h1 {
   font-size: larger;
 }
 
-.s-content{
-  padding: 10px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
 
 nav{
   display: flex;
@@ -49,3 +51,4 @@ nav a {
   border-top: 2px solid burlywood;
   padding: 20px 10px;
 }
+
