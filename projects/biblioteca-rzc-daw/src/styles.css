@@ -12,3 +12,10 @@ a.active {
   background-color: rgba(222, 184, 135, 0.5);
   box-shadow: 0px 0px 5px rgba(222, 184, 135, 0.5);
 }
+
+
+.glass-blur {
+  --blur-amount: 8px;
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+}

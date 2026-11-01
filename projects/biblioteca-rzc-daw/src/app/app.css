@@ -1,13 +1,12 @@
 .s-content
 , .mipie > * {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 10px;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 10px !important;
 }
 
 header {
-  --blur-amount: 8px;
-
+  /* * Blur effect in app.css: glass-blur */
   position: sticky;
   top: 10px;
   display: flex;
@@ -22,8 +21,7 @@ header {
   box-shadow: 0px 0px 14px burlywood;
 
   background-color: rgba(250, 235, 215, 0.4);
-  backdrop-filter: blur(var(--blur-amount));
-  -webkit-backdrop-filter: blur(var(--blur-amount));
+
 
   z-index: 200;
 }
@@ -47,8 +45,36 @@ nav a {
   color: brown;
 }
 
+header, header nav, header nav a {
+  transition: all 0.2s ease;
+}
+
 .mipie{
   border-top: 2px solid burlywood;
   padding: 20px 10px;
 }
 
+
+
+@media screen and (max-width: 874px) {
+  header {
+    flex-direction: column;
+  }
+
+  header nav {
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 419px) {
+  header {
+    margin-top: 0;
+    padding: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+  }
+
+  header nav {
+    flex-direction: column;
+  }
+}

@@ -1,4 +1,5 @@
 import { Service } from '@angular/core';
+import { IBookFilters } from '../../libros/models/ibook-filters';
 
 export interface BookRate {
   value: number;
@@ -18,23 +19,6 @@ export interface Book {
   rating?: BookRate;
   publisher?: string;
   languaje?: string;
-}
-
-export interface BookFilters {
-  genre?: string;
-  author?: string;
-  publicationYear?: {
-    year: number;
-    order: 'greater' | 'equal' | 'lower';
-  };
-  pages?: {
-    value: number;
-    order: 'greater' | 'equal' | 'lower';
-  };
-  rating?: {
-    rate: number;
-    order: 'greater' | 'equal' | 'lower';
-  };
 }
 
 @Service()
@@ -117,7 +101,7 @@ export class BookService {
     },
   ];
 
-  getAllBooks(filters?: BookFilters): Book[] {
+  getAllBooks(filters?: IBookFilters): Book[] {
     return this.books.filter((book) => {
       if (!filters) return true;
 

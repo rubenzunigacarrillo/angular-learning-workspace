@@ -4,7 +4,8 @@ import { Autores } from './autores/autores';
 import { Inicio } from './inicio/inicio';
 import { Libros } from './libros/libros';
 import { NoEncontrado } from './no-encontrado/no-encontrado';
-import { Detalles } from './libros/detalles/detalles';
+import { Detalles } from './libros/components/detalles/detalles';
+
 
 export const routes: Routes = [
   {

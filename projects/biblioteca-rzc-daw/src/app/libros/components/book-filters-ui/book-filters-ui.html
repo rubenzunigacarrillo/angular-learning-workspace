@@ -1,0 +1,64 @@
+<section class="bookshelf-filters">
+  <header class="filters-heading">
+    <div>
+      <p class="filters-eyebrow">Catálogo</p>
+      <h2 id="filters-title">Encuentra tu próxima lectura</h2>
+    </div>
+    <span class="filters-mark" aria-hidden="true">⌕</span>
+  </header>
+
+  <form class="filter-grid" aria-labelledby="filters-title">
+    <label class="filter-field">
+      <span>Género</span>
+      <input type="text" name="genre" placeholder="Ej. fantasía" autocomplete="off">
+    </label>
+
+    <label class="filter-field">
+      <span>Autor</span>
+      <input type="text" name="author" placeholder="Nombre del autor" autocomplete="off">
+    </label>
+
+    <fieldset class="filter-field filter-field--range">
+      <legend>Año de publicación</legend>
+      <div class="filter-control-row">
+        <label class="visually-hidden" for="publication-year-order">Comparación del año</label>
+        <select id="publication-year-order" name="publicationYearOrder">
+          <option value="greater">Mayor que</option>
+          <option value="equal">Igual a</option>
+          <option value="lower">Menor que</option>
+        </select>
+        <label class="visually-hidden" for="publication-year">Año</label>
+        <input id="publication-year" type="number" name="publicationYear" min="0" step="1" placeholder="2020">
+      </div>
+    </fieldset>
+
+    <fieldset class="filter-field filter-field--range">
+      <legend>Número de páginas</legend>
+      <div class="filter-control-row">
+        <label class="visually-hidden" for="pages-order">Comparación de páginas</label>
+        <select id="pages-order" name="pagesOrder">
+          <option value="greater">Mayor que</option>
+          <option value="equal">Igual a</option>
+          <option value="lower">Menor que</option>
+        </select>
+        <label class="visually-hidden" for="pages">Páginas</label>
+        <input id="pages" type="number" name="pages" min="1" step="1" placeholder="300">
+      </div>
+    </fieldset>
+
+    <fieldset class="filter-field filter-field--range">
+      <legend>Valoración</legend>
+      <div class="filter-control-row">
+        <label class="visually-hidden" for="rating-order">Comparación de valoración</label>
+        <select id="rating-order" name="ratingOrder">
+          <option value="greater">Mayor que</option>
+          <option value="equal">Igual a</option>
+          <option value="lower">Menor que</option>
+        </select>
+        <label class="visually-hidden" for="rating">Valoración</label>
+        <input id="rating" type="number" name="rating" min="0" max="5" step="0.1" placeholder="4.0">
+      </div>
+    </fieldset>
+  </form>
+</section>
+ 
