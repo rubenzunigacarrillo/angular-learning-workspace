@@ -105,8 +105,8 @@ export class BookService {
     return this.books.filter((book) => {
       if (!filters) return true;
 
-      if (filters.genre && book.genre !== filters.genre) return false;
-      if (filters.author && book.author !== filters.author) return false;
+      if (filters.genre && !book.genre.includes(filters.genre)) return false;
+      if (filters.author && !book.author.includes(filters.author)) return false;
 
       if (filters.publicationYear) {
         const { year, order } = filters.publicationYear;
