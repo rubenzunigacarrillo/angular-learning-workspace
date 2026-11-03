@@ -32,6 +32,12 @@
     },
     {
       "path": "./projects/pizzeria-rzc-daw/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/biblioteca-rzc-daw-ej2/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/biblioteca-rzc-daw-ej2/tsconfig.spec.json"
     }
   ]
 }
