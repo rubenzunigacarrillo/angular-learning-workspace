@@ -1,0 +1,80 @@
+.s-content
+, .mipie > * {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 10px !important;
+}
+
+header {
+  /* * Blur effect in app.css: glass-blur */
+  position: sticky;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 85%;
+  margin: 20px auto;
+  padding: 0 20px;
+  border: 1px solid burlywood;
+  border-radius: 50px;
+  box-shadow: 0px 0px 14px burlywood;
+
+  background-color: rgba(250, 235, 215, 0.4);
+
+
+  z-index: 200;
+}
+
+header h1 {
+  padding-left: 10px;
+  font-size: larger;
+}
+
+
+nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav a {
+  padding: 5px 20px;
+  text-decoration: none;
+  border-radius: 50px;
+  color: brown;
+}
+
+header, header nav, header nav a {
+  transition: all 0.2s ease;
+}
+
+.mipie{
+  border-top: 2px solid burlywood;
+  padding: 20px 10px;
+}
+
+
+
+@media screen and (max-width: 874px) {
+  header {
+    flex-direction: column;
+  }
+
+  header nav {
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 419px) {
+  header {
+    margin-top: 0;
+    padding: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+  }
+
+  header nav {
+    flex-direction: column;
+  }
+}
