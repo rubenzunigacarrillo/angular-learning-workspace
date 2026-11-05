@@ -1,14 +1,16 @@
 import { Routes } from '@angular/router';
 
 // Custom Components
-import { Contact } from './contact/contact';
-import { Details } from './details/details';
-import { Dishes } from './dishes/dishes';
-import { Home } from './home/home';
-import { NotFound } from './not-found/not-found';
+import { Contact } from './pages/contact/contact';
+import { Home } from './pages/home/home';
+import { BOOKING_ROUTES } from './pages/bookings/bookings.routes';
+import { NotFound } from './pages/not-found/not-found';
+import { Details } from './pages/details/details';
+import { Login } from './pages/login/login';
+// import { Dishes } from './dishes/dishes';
+import { Bookings } from './bookings/bookings/bookings';
 import { NewBookings } from './bookings/new-bookings/new-bookings';
 import { MyBookings } from './bookings/my-bookings/my-bookings';
-import { Bookings } from './bookings/bookings/bookings';
 
 export const routes: Routes = [
   {
@@ -22,7 +24,8 @@ export const routes: Routes = [
   },
   {
     path: 'carta',
-    component: Dishes,
+    // component: Dishes,
+    loadComponent: () => import('./pages/dishes/dishes').then((m) => m.Dishes),
   },
   {
     path: 'carta/:id',
@@ -34,9 +37,10 @@ export const routes: Routes = [
   },
   {
     path: 'reservas',
+    // loadChildren: () => import('./pages/bookings/bookings.routes').then((m) => m.BOOKING_ROUTES),
     component: Bookings,
     children: [
-      { path: '', redirectTo: 'nueva-reserva', pathMatch: 'full'},
+      { path: '', redirectTo: 'nueva-reserva', pathMatch: 'full' },
       {
         path: 'nueva-reserva',
         component: NewBookings,
@@ -46,6 +50,10 @@ export const routes: Routes = [
         component: MyBookings,
       },
     ],
+  },
+  {
+    path: 'login',
+    component: Login,
   },
   {
     path: '**',
