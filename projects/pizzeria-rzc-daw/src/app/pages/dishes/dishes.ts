@@ -1,5 +1,5 @@
 import { Component, computed, inject, Input, input } from '@angular/core';
-import { PizzaService } from '../services/pizza-service';
+import { PizzaService } from '../../services/pizza-service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
