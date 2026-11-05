@@ -1,5 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Paleta de colores planos */
+:root {
+  --canvas-bg: #ffffff;
+  --surface-bg: #fcfbf8;
+  --border-flat: #f0e9e2;
+  --text-dark: #2a1c0f;
+  --text-body: #554233;
+  --text-muted: #8b7d64;
+  --primary-accent: #deb887;
+  --primary-hover: color-mix(in srgb, var(--primary-accent), white 20%);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+}
 *{
   font-family: system-ui, -apple-system, sans-serif;
 }
@@ -9,8 +20,8 @@ body {
 }
 
 a.active {
-  background-color: rgba(222, 184, 135, 0.5);
-  box-shadow: 0px 0px 5px rgba(222, 184, 135, 0.5);
+  background-color: color-mix(in srgb, var(--primary-accent), transparent 50%);
+  box-shadow: 0px 0px 5px color-mix(in srgb, var(--primary-accent), transparent 50%);
 }
 
 
