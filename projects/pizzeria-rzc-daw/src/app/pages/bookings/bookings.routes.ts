@@ -7,7 +7,7 @@ import { Bookings } from './bookings/bookings';
 
 export const BOOKING_ROUTES: Routes = [
   {
-    path: 'reservas',
+    path: '',
     component: Bookings,
     children: [
       { path: '', redirectTo: 'nueva-reserva', pathMatch: 'full' },

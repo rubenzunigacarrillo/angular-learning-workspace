@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 // Custom Components
-import { Contact } from './pages/contact/contact';
 import { Home } from './pages/home/home';
-import { BOOKING_ROUTES } from './pages/bookings/bookings.routes';
 import { NotFound } from './pages/not-found/not-found';
-import { Details } from './pages/details/details';
 import { Login } from './pages/login/login';
-// import { Dishes } from './dishes/dishes';
-import { Bookings } from './bookings/bookings/bookings';
-import { NewBookings } from './bookings/new-bookings/new-bookings';
-import { MyBookings } from './bookings/my-bookings/my-bookings';
+
+import { pizzaResolver, pizzaTitleResolver } from './resolver/pizza-resolver';
+
+const titleEnd =  '· Pizzería DAW'
 
 export const routes: Routes = [
   {
@@ -20,36 +17,29 @@ export const routes: Routes = [
   },
   {
     path: 'inicio',
+    title: `Inicio ${titleEnd}`,
     component: Home,
   },
   {
     path: 'carta',
-    // component: Dishes,
+    title: `Carta ${titleEnd}`,
     loadComponent: () => import('./pages/dishes/dishes').then((m) => m.Dishes),
   },
   {
     path: 'carta/:id',
-    component: Details,
+    title: pizzaTitleResolver,
+    resolve: { pizza: pizzaResolver },
+    loadComponent: () => import('./pages/details/details').then((m) => m.Details),
   },
   {
     path: 'contacto',
-    component: Contact,
+    title: `Contacto ${titleEnd}`,
+    loadComponent: () => import('./pages/contact/contact').then((m) => m.Contact),
   },
   {
     path: 'reservas',
-    // loadChildren: () => import('./pages/bookings/bookings.routes').then((m) => m.BOOKING_ROUTES),
-    component: Bookings,
-    children: [
-      { path: '', redirectTo: 'nueva-reserva', pathMatch: 'full' },
-      {
-        path: 'nueva-reserva',
-        component: NewBookings,
-      },
-      {
-        path: 'mis-reservas',
-        component: MyBookings,
-      },
-    ],
+    title: `Reservas ${titleEnd}`,
+    loadChildren: () => import('./pages/bookings/bookings.routes').then((m) => m.BOOKING_ROUTES),
   },
   {
     path: 'login',
