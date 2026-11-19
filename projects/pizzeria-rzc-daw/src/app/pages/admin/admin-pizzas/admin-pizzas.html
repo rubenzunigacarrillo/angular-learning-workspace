@@ -1,1 +1,10 @@
-<p>admin-pizzas works!</p>
+<h3>Pizzas</h3>
+
+<ul>
+  @for (p of service.pizzas(); track p.id) {
+    <li>
+      {{ p.name }}
+      <a [routerLink]="['/admin/pizzas/', p.id]">Editar</a>
+    </li>
+  }
+</ul>

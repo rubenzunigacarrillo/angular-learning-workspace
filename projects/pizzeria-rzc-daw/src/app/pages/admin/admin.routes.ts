@@ -9,7 +9,7 @@ import { notSavedGuard } from '../../guards/without-saving-guard';
 
 export const ADMIN_ROUTES: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: AdminPanel,
     data: { rol: 'admin' },
     children: [

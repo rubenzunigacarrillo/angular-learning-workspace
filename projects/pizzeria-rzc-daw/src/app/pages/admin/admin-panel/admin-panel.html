@@ -1,1 +1,14 @@
-<p>admin-panel works!</p>
+<h2>Panel de administración</h2>
+<p>Rol: {{ rol()}}</p>
+
+<nav class="flex flex-row gap-2 mt-2">
+  <a class="customButton"
+    routerLink="pizzas" routerLinkActive="active"
+  >
+  Pizzas
+  </a>
+</nav>
+
+<section>
+  <router-outlet></router-outlet>
+</section>

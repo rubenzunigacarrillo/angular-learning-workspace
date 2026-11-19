@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, input, InputSignal } from '@angular/core';
+import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 
 @Component({
-  imports: [],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   selector: 'app-admin-panel',
   styleUrl: './admin-panel.css',
   templateUrl: './admin-panel.html',
 })
-export class AdminPanel {}
+export class AdminPanel {
+  rol: InputSignal<string | undefined> = input<string>();
+}
