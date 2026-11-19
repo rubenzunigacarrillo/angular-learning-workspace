@@ -9,6 +9,10 @@ import { pizzaResolver, pizzaTitleResolver } from './resolver/pizza-resolver';
 
 const titleEnd =  '· Pizzería DAW'
 
+function getTitle(name:string, sufix:string  = titleEnd) {
+  return `${name} ${sufix}`
+}
+
 export const routes: Routes = [
   {
     path: '',
@@ -17,12 +21,12 @@ export const routes: Routes = [
   },
   {
     path: 'inicio',
-    title: `Inicio ${titleEnd}`,
+    title: getTitle('Inicio'),
     component: Home,
   },
   {
     path: 'carta',
-    title: `Carta ${titleEnd}`,
+    title: getTitle('Carta'),
     loadComponent: () => import('./pages/dishes/dishes').then((m) => m.Dishes),
   },
   {
@@ -33,13 +37,18 @@ export const routes: Routes = [
   },
   {
     path: 'contacto',
-    title: `Contacto ${titleEnd}`,
+    title: getTitle('Contacto'),
     loadComponent: () => import('./pages/contact/contact').then((m) => m.Contact),
   },
   {
     path: 'reservas',
-    title: `Reservas ${titleEnd}`,
+    title: getTitle('Reservas'),
     loadChildren: () => import('./pages/bookings/bookings.routes').then((m) => m.BOOKING_ROUTES),
+  },
+  {
+    path: 'admin',
+    title: getTitle('Admin'),
+    loadChildren: () => import('./pages/admin/admin.routes').then((m) => m.ADMIN_ROUTES),
   },
   {
     path: 'login',
