@@ -6,7 +6,7 @@ export interface Pizza extends IPizza {};
 @Service()
 export class PizzaService {
   private readonly _pizzas = signal(PIZZA_ARRAY);
-  readonly pizzas = this._pizzas.asReadonly;
+  readonly pizzas = this._pizzas.asReadonly();
 
   getPizzas(type?: string): Pizza[] {
     return type ? this._pizzas().filter((p) => p.type === type) : this._pizzas();
