@@ -4,7 +4,6 @@
     <a class="custom-a" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         Inicio
     </a>
-
     <a class="custom-a" routerLink="carta" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         Carta
     </a>
@@ -14,6 +13,15 @@
     <a class="custom-a" routerLink="reservas" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         Reservas
     </a>
+
+    @if (auth.logged()) {
+      <button class="custom-a" (click)="exit()">Salir</button>
+    }
+    @else {
+      <a class="custom-a" routerLink="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          Acceder
+      </a>
+    }
   </nav>
 </header>
 

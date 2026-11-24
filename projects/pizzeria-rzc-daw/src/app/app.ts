@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterLinkWithHref, RouterLinkActive } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { RouterOutlet, RouterLinkWithHref, RouterLinkActive, Router } from '@angular/router';
+import { AuthService } from './services/auth-service';
 
 @Component({
   imports: [RouterOutlet, RouterLinkWithHref, RouterLinkActive],
@@ -9,4 +10,12 @@ import { RouterOutlet, RouterLinkWithHref, RouterLinkActive } from '@angular/rou
 })
 export class App {
   protected readonly title = signal('pizzeria-rzc-daw');
+
+  protected auth = inject(AuthService);
+  private router = inject(Router);
+
+  exit() {
+    this.auth.logout();
+    this.router.navigateByUrl('/inicio');
+  }
 }
