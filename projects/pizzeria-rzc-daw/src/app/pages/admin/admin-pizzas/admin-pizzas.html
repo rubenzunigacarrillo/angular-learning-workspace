@@ -2,9 +2,11 @@
 
 <ul>
   @for (p of service.pizzas(); track p.id) {
-    <li>
+    <li class="">
       {{ p.name }}
-      <a [routerLink]="['/admin/pizzas/', p.id]">Editar</a>
+      <div class="inline-flex scale-70">
+        <a class="customButton" [routerLink]="['/admin/pizzas/', p.id]">Editar</a>
+      </div>
     </li>
   }
 </ul>
