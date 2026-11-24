@@ -38,6 +38,12 @@
     },
     {
       "path": "./projects/biblioteca-rzc-daw-ej2/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/biblioteca-rzc-daw-ej3/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/biblioteca-rzc-daw-ej3/tsconfig.spec.json"
     }
   ]
 }
