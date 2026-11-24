@@ -1,0 +1,13 @@
+section {
+
+}
+
+section > label {
+
+}
+
+div.change-options {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}

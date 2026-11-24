@@ -1,1 +1,18 @@
-<p>edit-pizzas works!</p>
+<h3>Edición de Pizzas</h3>
+
+<section>
+  @if (selectedPizza(); as pizza) {
+    <label for="pizza-name">
+      Nombre:
+      <input type="text" [(ngModel)]="name">
+    </label>
+    <div class="change-options">
+      <button class="customButton" (click)="saveChanges()">Guardar</button>
+      <a class="customButton" routerLink="/admin/">Cancelar</a>
+    </div>
+  }
+  @else {
+  <p>La pizza seleccionada no existe.</p>
+  <a class="customButton" routerLink="/admin/">Volver atrás</a>
+}
+</section>
