@@ -32,4 +32,7 @@ export class PizzaService {
 
     return this._pizzas()[(index - 1 + this._pizzas().length) % this._pizzas().length].id;
   }
+  setPizzaName(id: number, name: string) {
+    this._pizzas.update(list => list.map(p => p.id === id ? {...p, name} : p));
+  }
 }
