@@ -1,0 +1,22 @@
+.link-selector {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.link-selector a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: smaller;
+  border-radius: 25px;
+  background-color: var(--border-flat);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.link-selector a:hover,
+.link-selector a.active {
+  color: var(--text-body);
+  background-color: color-mix(in srgb, var(--primary-accent), var(--border-flat) 50%);
+}

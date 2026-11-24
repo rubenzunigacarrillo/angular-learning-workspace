@@ -1,0 +1,39 @@
+<section class="book-filter">
+  <a class=""
+    routerLink="/libros"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: true}"
+  >Todos</a>
+  @for (genre of genreList(); track $index) {
+    <a class=""
+      routerLink="/libros"
+      routerLinkActive="active"
+      [queryParams]="{ genre: genre }"
+    >{{ genre }}</a>
+  }
+</section>
+<section class="bookshelf">
+  @for (book of books(); track $index) {
+  <article class="book-card">
+    <figure class="book-cover" [routerLink]="['/libros', book.id]">
+      <img src="{{book.coverUrl}}" alt="Portada del libro: {{ book.title }}">
+    </figure>
+    <div class="book-details">
+      <span class="book-genre">{{ book.genre }}</span>
+      <h2 class="book-title">{{ book.title }}</h2>
+      <p class="book-author">Por: <strong>{{ book.author }}</strong></p>
+      <ul class="book-meta">
+        <li>Año: <time datetime="2023">{{ book.publicationYear }}</time></li>
+        <li>Páginas: <span>{{ book.pages }}</span></li>
+      </ul>
+      <div class="book-rating">
+        <span>Clasificación:</span>
+        <span class="rating-stars" aria-label="{{ book.rating?.value }} de 5 estrellas">{{ bookService.getRatingStars(book.rating?.value ?? 0) }} ({{ book.rating?.value }})</span>
+      </div>
+      <p class="book-synopsis">
+        {{ book.synopsis }}
+      </p>
+    </div>
+  </article>
+  }
+</section>
