@@ -1,3 +1,15 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.s-content{
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
 .s-content
 , .mipie > * {
   max-width: 1100px !important;
