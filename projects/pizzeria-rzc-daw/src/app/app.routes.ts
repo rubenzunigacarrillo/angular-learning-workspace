@@ -52,6 +52,7 @@ export const routes: Routes = [
   },
   {
     path: 'login',
+    title: getTitle('Login'),
     component: Login,
   },
   {
