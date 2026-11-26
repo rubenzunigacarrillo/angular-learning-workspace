@@ -1,0 +1,15 @@
+ul {
+  width: fit-content;
+}
+
+ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+li > div {
+  width: fit-content;
+  text-align: center;
+}

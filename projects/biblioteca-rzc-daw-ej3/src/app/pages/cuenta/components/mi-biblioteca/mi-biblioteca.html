@@ -1,0 +1,13 @@
+
+<section class="bookshelf">
+  <ul>
+    @for (book of books; track book.id) {
+      <li>
+        <p>{{book.title}}</p>
+        <div class="link-selector">
+          <a [routerLink]="['/mi-cuenta/biblioteca', book.id]">Editar</a>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
