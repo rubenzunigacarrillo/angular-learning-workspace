@@ -1,9 +1,21 @@
 
-<section class="bookshelf">
+<section class="library-page">
+  <header>
+    <div>
+      <span>Mi colección</span>
+      <h1>Biblioteca</h1>
+    </div>
+    <p>{{ books.length }} libros disponibles</p>
+  </header>
+
   <ul>
     @for (book of books; track book.id) {
       <li>
-        <p>{{book.title}}</p>
+        <span class="book-index">{{ book.id.toString().padStart(2, '0') }}</span>
+        <div class="book-copy">
+          <p>{{ book.title }}</p>
+          <small>{{ book.author }}</small>
+        </div>
         <div class="link-selector">
           <a [routerLink]="['/mi-cuenta/biblioteca', book.id]">Editar</a>
         </div>
