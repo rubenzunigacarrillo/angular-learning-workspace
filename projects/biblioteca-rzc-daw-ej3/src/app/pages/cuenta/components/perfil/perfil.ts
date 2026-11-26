@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../../../../core/services/auth-service';
+import { Router } from '@angular/router';
 
 @Component({
   imports: [],
@@ -6,4 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './perfil.css',
   templateUrl: './perfil.html',
 })
-export class Perfil {}
+export class Perfil {
+  private auth = inject(AuthService);
+  private router = inject(Router);
+
+  logout() {
+    this.auth.logout();
+    this.router.navigateByUrl('/');
+  }
+}
