@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { Inicio } from './inicio/inicio';
-import { NoEncontrado } from './no-encontrado/no-encontrado';
+import { Inicio } from './pages/inicio/inicio';
+import { NoEncontrado } from './pages/no-encontrado/no-encontrado';
 
 
 export const routes: Routes = [
@@ -16,19 +16,19 @@ export const routes: Routes = [
   },
   {
     path: 'libros',
-    loadComponent: () => import('./libros/libros').then((m) => m.Libros),
+    loadComponent: () => import('./pages/libros/libros').then((m) => m.Libros),
   },
   {
     path: 'libros/:id',
-    loadComponent: () => import('./libros/components/detalles/detalles').then((m) => m.Detalles),
+    loadComponent: () => import('./pages/libros/components/detalles/detalles').then((m) => m.Detalles),
   },
   {
     path: 'autores',
-    loadComponent: () => import('./autores/autores').then((m) => m.Autores),
+    loadComponent: () => import('./pages/autores/autores').then((m) => m.Autores),
   },
   {
     path: 'mi-cuenta',
-    loadChildren: () => import('./cuenta/app.routes').then((m) => m.ACCOUNT_ROUTES),
+    loadChildren: () => import('./pages/cuenta/app.routes').then((m) => m.ACCOUNT_ROUTES),
   },
   {
     path: '**',

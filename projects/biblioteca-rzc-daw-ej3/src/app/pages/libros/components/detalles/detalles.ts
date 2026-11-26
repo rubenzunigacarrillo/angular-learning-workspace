@@ -1,6 +1,6 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { BookService } from '../../../core/services/book-service';
+import { BookService } from '../../../../core/services/book-service';
 
 @Component({
   imports: [RouterLink],
