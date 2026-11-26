@@ -1,0 +1,19 @@
+section {
+  display: grid;
+  gap: 24px;
+  padding: 20px;
+}
+
+.link-selector {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 5px;
+  border: 1px solid var(--border-flat);
+  border-radius: 30px;
+  background: var(--surface-bg);
+}
+
+.link-selector a {
+  padding: 8px 16px;
+  border-radius: 24px;
+}
