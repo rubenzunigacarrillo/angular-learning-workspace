@@ -1,0 +1,82 @@
+.edit-page {
+  max-width: 680px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.edit-page header {
+  margin-bottom: 18px;
+}
+
+.edit-page header span {
+  color: var(--text-muted);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.edit-page h1 {
+  margin: 6px 0 0;
+  color: var(--text-dark);
+}
+
+.edit-card {
+  display: grid;
+  gap: 20px;
+  padding: 28px;
+  border: 1px solid var(--border-flat);
+  border-radius: var(--radius-md);
+  background: var(--surface-bg);
+}
+
+.edit-card label {
+  display: grid;
+  gap: 8px;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.edit-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid var(--border-flat);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--text-dark);
+  font: inherit;
+  outline: none;
+}
+
+.edit-card input:focus {
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-accent), transparent 70%);
+}
+
+.change-options {
+  display: flex;
+  gap: 10px;
+}
+
+.customButton {
+  padding: 10px 16px;
+  border: 1px solid var(--primary-accent);
+  border-radius: var(--radius-sm);
+  background: var(--primary-accent);
+  color: var(--text-dark);
+  font: inherit;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.change-options .customButton:last-child {
+  border-color: var(--border-flat);
+  background: #fff;
+}
+
+.missing-book {
+  color: var(--text-muted);
+}

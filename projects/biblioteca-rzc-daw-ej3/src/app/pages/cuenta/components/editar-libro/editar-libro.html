@@ -1,6 +1,10 @@
-<h3>Editar libro</h3>
+<main class="edit-page">
+  <header>
+    <span>Gestión de colección</span>
+    <h1>Editar libro</h1>
+  </header>
 
-<section>
+  <section class="edit-card">
   @if (selectedBook(); as book) {
     <label for="book-title">
       Nombre:
@@ -12,7 +16,8 @@
     </div>
   }
   @else {
-  <p>El libro seleccionado no existe.</p>
-  <a class="" routerLink="/mi-cuenta/biblioteca">Volver atrás</a>
+  <p class="missing-book">El libro seleccionado no existe.</p>
+  <a class="customButton" routerLink="/mi-cuenta/biblioteca">Volver atrás</a>
 }
 </section>
+</main>
