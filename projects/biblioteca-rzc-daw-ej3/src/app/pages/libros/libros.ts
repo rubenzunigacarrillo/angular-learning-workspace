@@ -1,7 +1,7 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
-import { BookService, Book } from '../core/services/book-service';
+import { BookService, Book } from '../../core/services/book-service';
 import { BookFilters } from './models/book-filters';
 
 @Component({
