@@ -30,3 +30,59 @@ a.active {
   backdrop-filter: blur(var(--blur-amount));
   -webkit-backdrop-filter: blur(var(--blur-amount));
 }
+
+button.default {
+  padding: 0.65rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--primary-accent), black 15%);
+  border-radius: var(--radius-md);
+  background-color: var(--primary-accent);
+  color: var(--text-dark);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+button.default:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  box-shadow: 0 3px 8px color-mix(in srgb, var(--primary-accent), transparent 55%);
+  transform: translateY(-1px);
+}
+
+button.default:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary-accent), transparent 35%);
+  outline-offset: 2px;
+}
+
+button.default:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button.default:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+.link-selector {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.link-selector a{
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: smaller;
+  border-radius: 25px;
+  background-color: var(--border-flat);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.link-selector a:hover,
+.link-selector a.active {
+  color: var(--text-body);
+  background-color: color-mix(in srgb, var(--primary-accent), var(--border-flat) 50%);
+}
