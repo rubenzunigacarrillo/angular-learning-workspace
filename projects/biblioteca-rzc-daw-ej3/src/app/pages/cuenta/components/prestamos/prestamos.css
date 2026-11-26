@@ -1,0 +1,55 @@
+.loans {
+  max-width: 760px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.loans header span {
+  color: var(--text-muted);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.loans h1 {
+  margin: 6px 0 20px;
+  color: var(--text-dark);
+}
+
+.empty-state {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  border: 1px dashed var(--primary-accent);
+  border-radius: var(--radius-md);
+  background: var(--surface-bg);
+}
+
+.empty-icon {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--border-flat);
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.empty-state h2 {
+  margin: 18px 0 6px;
+  color: var(--text-dark);
+  font-size: 1.15rem;
+}
+
+.empty-state p {
+  max-width: 430px;
+  margin: 0;
+  color: var(--text-muted);
+}
