@@ -1,0 +1,18 @@
+<h3>Editar libro</h3>
+
+<section>
+  @if (selectedBook(); as book) {
+    <label for="book-title">
+      Nombre:
+      <input type="text" [(ngModel)]="title">
+    </label>
+    <div class="change-options">
+      <button class="customButton" (click)="saveChanges()">Guardar</button>
+      <a class="customButton" routerLink="/mi-cuenta/biblioteca">Cancelar</a>
+    </div>
+  }
+  @else {
+  <p>El libro seleccionado no existe.</p>
+  <a class="" routerLink="/mi-cuenta/biblioteca">Volver atrás</a>
+}
+</section>
