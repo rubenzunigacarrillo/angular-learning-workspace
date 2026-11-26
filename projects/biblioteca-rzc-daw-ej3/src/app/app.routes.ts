@@ -31,6 +31,10 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/cuenta/app.routes').then((m) => m.ACCOUNT_ROUTES),
   },
   {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login').then((m) => m.Login),
+  },
+  {
     path: '**',
     component: NoEncontrado,
   },
