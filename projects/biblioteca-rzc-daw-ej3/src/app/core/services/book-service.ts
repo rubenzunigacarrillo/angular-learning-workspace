@@ -1,5 +1,5 @@
-import { Service } from '@angular/core';
-import { IBookFilters } from '../../libros/models/ibook-filters';
+import { Service, signal } from '@angular/core';
+import { IBookFilters } from '../../pages/libros/models/ibook-filters';
 
 export interface BookRate {
   value: number;
@@ -24,7 +24,7 @@ export interface Book {
 
 @Service()
 export class BookService {
-  books: Book[] = [
+  private readonly _books = signal([
     {
       id: 1,
       isbn: '978-0142437230',
@@ -105,10 +105,12 @@ export class BookService {
       publisher: 'Harper Perennial',
       languaje: 'Inglés',
     },
-  ];
+  ]);
+
+  readonly books = this._books.asReadonly();
 
   getAllBooks(filters?: IBookFilters): Book[] {
-    return this.books.filter((book) => {
+    return this.books().filter((book) => {
       if (!filters) return true;
 
       if (filters.genre && book.genre !== filters.genre) return false;
@@ -147,19 +149,23 @@ export class BookService {
   }
 
   getBookById(id: number): Book | undefined {
-    return this.books.find((book) => book.id === id);
+    return this.books().find((book) => book.id === id);
   }
 
   nextBookId(id: number): Number {
-    const nextBook = this.books[(id) % this.books.length];
+    const nextBook = this.books()[id % this.books().length];
     return nextBook.id;
   }
   previousBookId(id: number): Number {
-    const previousBook = this.books[(id - 2 + this.books.length) % this.books.length];
+    const previousBook = this.books()[(id - 2 + this.books().length) % this.books().length];
     return previousBook.id;
   }
 
   getAvailableGenres(): string[] {
-    return [...new Set(this.books.map((book) => book.genre))];
+    return [...new Set(this.books().map((book) => book.genre))];
+  }
+
+  setBookTitle(id: number, title: string) {
+    this._books.update(list => list.map(book => book.id === id ? {...book, title} : book));
   }
 }
